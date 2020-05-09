@@ -25,11 +25,24 @@ Open your [Dashboard](https://developer.spotify.com/dashboard/applications) and 
 
 Retrieve your client ID and your client secret and replace them in the scrpit (ligne 16,17).
 
+## Set redirect URIS
+Open your [Dashboard](https://developer.spotify.com/dashboard/applications) 
+
+Go to your application.
+
+Click on settings.
+
+Add this as your redirect URI : http://google.com/ 
+
+
 ## Fill the rest of the code 
 Paste your Youtube Playlist URL (**MUST BE PUBLIC OR UNLISTED**) in the scrpit (ligne 68). 
 
 Choose your playlist title and descrpition (ligne 71,72). 
 
+## Running the code
+
+You will be required to paste the redirected URI, copy the url of the page you will redirected to (normally google) and paste it in your console. 
 
 
 ## Issues to be fixed
