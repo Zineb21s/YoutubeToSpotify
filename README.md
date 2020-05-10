@@ -18,12 +18,12 @@ pip install bs4
 ## Get your spotify username
 Go to [Account Overview](https://www.spotify.com/us/account/overview/). 
 
-Get your username and replace it in the scrpit (ligne 8). 
+Get your username and replace it in the scrpit (ligne 9). 
 
 ## Register your app
 Open your [Dashboard](https://developer.spotify.com/dashboard/applications) and create a client ID.
 
-Retrieve your client ID and your client secret and replace them in the scrpit (ligne 16,17).
+Retrieve your client ID and your client secret and replace them in the scrpit (ligne 17,18).
 
 ## Set redirect URIS
 Open your [Dashboard](https://developer.spotify.com/dashboard/applications) 
@@ -38,7 +38,7 @@ Add this as your redirect URI : http://google.com/
 ## Fill the rest of the code 
 Paste your Youtube Playlist URL (**MUST BE PUBLIC OR UNLISTED**) in the scrpit (ligne 68). 
 
-Choose your playlist title and descrpition (ligne 71,72). 
+Choose your playlist title and descrpition (ligne 77,78). 
 
 ## Running the code
 
