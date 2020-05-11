@@ -79,16 +79,18 @@ if toke:
     sp.user_playlist_create(USERNAME, TITLE, public=True, description=DESC)
     playlists = sp.current_user_playlists()
     playlist_Id = playlists['items'][0]['id']
-    print(songs)
     for song in songs:
         cleaned_title = clean_title(song)
-        music = find_song(cleaned_title)
-        songId = get_song_id(music)
-        if songId:
-            add_song(songId, playlist_Id, USERNAME)
-            print("yes?")
+        if len(cleaned_title) > 0:
+            music = find_song(cleaned_title)
+            songId = get_song_id(music)
+            if songId:
+                add_song(songId, playlist_Id, USERNAME)
+                # print("yes?")
+            else:
+                print(song + "not found!")
         else:
-            print(song + "not found!")
+            print("The video has been deleted or it is private.")
 
 else:
     print("nopeeee")
