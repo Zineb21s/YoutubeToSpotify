@@ -1,21 +1,11 @@
 """This script is to create a Spotify Playlist from a Youtube Playlist (up to 100 songs so far)."""
 import re
-import requests
+import sys
 import spotipy
-import spotipy.util as util
+import requests
+from spotipy import util
 from bs4 import BeautifulSoup
-
-# Spotify username
-USERNAME = " "
-
-SCOPE = 'playlist-modify-public'
-
-# You need to add the redirect uri in your app
-REDIRECT = 'http://google.com/'
-
-# Register an app on spotify and get this
-CLIENT_ID = " "
-CLIENT_SECRET = " "
+import config
 
 
 def get_yt_songs(url):
@@ -63,15 +53,20 @@ def add_song(track, playlist, user):
     """Adds the song to the Spotify Playlist."""
     sp.user_playlist_add_tracks(user, playlist, [track])
 
+if len(sys.argv) > 1:
+    USERNAME = sys.argv[1]
+else:
+    print("Please enter username")
+    sys.exit()
 
-toke = util.prompt_for_user_token(USERNAME, SCOPE, client_id=CLIENT_ID, client_secret=CLIENT_SECRET,
-                                  redirect_uri=REDIRECT)
+token = util.prompt_for_user_token(USERNAME, config.SCOPE, client_id=config.CLIENT_ID,
+                                   client_secret=config.CLIENT_SECRET, redirect_uri=config.REDIRECT)
 
-if toke:
-    sp = spotipy.Spotify(auth=toke)
+if token:
+    sp = spotipy.Spotify(auth=token)
 
     # The youtube playlist must be public
-    URL = " "
+    URL = "https://www.youtube.com/playlist?list=PL_8qg6E2ChVQyMAn53OQkij73ESJWmRTn"
 
     songs = get_yt_songs(URL)
     TITLE = " "
@@ -88,7 +83,7 @@ if toke:
                 add_song(songId, playlist_Id, USERNAME)
                 # print("yes?")
             else:
-                print(song + "not found!")
+                print(song + " not found!")
         else:
             print("The video has been deleted or it is private.")
 
