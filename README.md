@@ -32,7 +32,6 @@ You will be required to paste the redirected URI, copy the url of the page you w
 
 
 ## Issues to be fixed
-Retrieving more than 100 songs from Youtube. 
 
 Avoid the pasting of the redirected URI. 
 
@@ -40,5 +39,4 @@ Avoid the pasting of the redirected URI.
 ## Work in progress 
 Make it an online service.
 
-Currently fixing some threading problems (to avoid the Heroku's 30 sec timeout). 
 
