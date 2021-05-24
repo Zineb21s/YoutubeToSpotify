@@ -109,7 +109,7 @@ def youtube_to_spotify(USERNAME, URL):
             sp.trace = False
 
             songs = get_yt_songs(URL)
-            TITLE = "Testing21"
+            TITLE = " "
             DESC = " "
             sp.user_playlist_create(USERNAME, TITLE, public=True, description=DESC)
             playlists = sp.current_user_playlists()
